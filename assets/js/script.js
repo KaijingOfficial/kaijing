@@ -157,3 +157,23 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  const wechatItem = document.querySelector('.social-item:has(ion-icon[name="logo-wechat"])');
+  const popup = document.getElementById('wechatPopup');
+
+  if (wechatItem && popup) {
+    wechatItem.addEventListener('mouseenter', function(e) {
+      const rect = this.getBoundingClientRect();
+      popup.style.left = rect.left + window.scrollX + 'px';
+      popup.style.top = rect.top + window.scrollY - popup.offsetHeight + 'px';
+      popup.style.display = 'block';
+      setTimeout(() => popup.style.opacity = '1', 10);
+    });
+
+    wechatItem.addEventListener('mouseleave', function() {
+      popup.style.opacity = '0';
+      setTimeout(() => popup.style.display = 'none', 300);
+    });
+  }
+});
