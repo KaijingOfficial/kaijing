@@ -117,11 +117,74 @@
   --transition-1: 0.25s ease;
   --transition-2: 0.5s ease-in-out;
 
+  /* Light mode colors */
+  --bg-gradient-onyx-light: linear-gradient(
+    to bottom right, 
+    hsl(0, 85%, 64%) 3%, 
+    hsl(0, 0%, 90%) 97%
+  );
+  --bg-gradient-jet-light: linear-gradient(
+    to bottom right, 
+    hsla(181, 79%, 77%, 0.251) 0%, 
+    hsla(0, 100%, 65%, 0) 100%
+  ), hsl(0, 0%, 95%);
+  --eerie-black-1-light: hsl(0, 0%, 90%);
+  --eerie-black-2-light: hsl(213, 31%, 93%);
+  --smoky-black-light: hsl(0, 0%, 100%);
+  --white-1-light: hsl(0, 0%, 36%);
+  --white-2-light: hsl(0, 0%, 10%);
+  --orange-yellow-crayola-light: hsl(25, 100%, 50%);
+  --vegas-gold-light: hsl(0, 99%, 52%);
+  --light-gray-light: hsl(0, 69%, 3%);
+  --light-gray-70-light: hsla(0, 0%, 11%, 0.7);
+  --light-gray-60-light: hsla(0, 11%, 80%, 0.6);
+  --bittersweet-shimmer-light: hsl(0, 43%, 51%);
+  --jet-light: hsl(0, 0%, 80%);
+
+  /* ... other variables ... */
+  --bg-gradient-yellow-1-light: linear-gradient(
+    to bottom right, 
+    hsl(45, 100%, 71%) 0%, 
+    hsla(36, 100%, 69%, 0) 50%
+  );
+  --bg-gradient-yellow-2-light: linear-gradient(
+    135deg, 
+    hsla(45, 100%, 71%, 0.251) 0%, 
+    hsla(35, 100%, 68%, 0) 59.86%
+  ), hsl(0, 0%, 95%);
 }
 
 
 
 
+.light-mode {
+  --bg-gradient-onyx: var(--bg-gradient-onyx-light);
+  --bg-gradient-jet: var(--bg-gradient-jet-light);
+  --eerie-black-1: var(--eerie-black-1-light);
+  --eerie-black-2: var(--eerie-black-2-light);
+  --smoky-black: var(--smoky-black-light);
+  --white-1: var(--white-1-light);
+  --white-2: var(--white-2-light);
+  --orange-yellow-crayola: var(--orange-yellow-crayola-light);
+  --vegas-gold: var(--vegas-gold-light);
+  --light-gray: var(--light-gray-light);
+  --light-gray-70: var(--light-gray-70-light);
+  --bittersweet-shimmer: var(--bittersweet-shimmer-light);
+  --jet: var(--jet-light);
+  /* ... other light mode variables ... */
+  --bg-gradient-yellow-1: var(--bg-gradient-yellow-1-light);
+  --bg-gradient-yellow-2: var(--bg-gradient-yellow-2-light);
+  
+}
+
+/* .light-mode .info-content .name {
+  color: var(--white-2-light);
+} */
+
+.light-mode .info-content .title {
+  color: var(--white-1-light);
+  background: var(--light-gray-60-light);
+}
 
 /*-----------------------------------*\
   #RESET
@@ -165,7 +228,33 @@ html { font-family: var(--ff-poppins); }
 
 body { background: var(--smoky-black); }
 
+.light-mode body { background: var(--smoky-black-light); }
 
+.light-mode .sidebar,
+.light-mode article {
+  background: var(--eerie-black-2-light);
+  border: 1px solid var(--jet-light);
+}
+
+.light-mode .filter-select-box,
+.light-mode .select-list {
+  background: var(--eerie-black-2-light);
+}
+
+.light-mode .navbar {
+  background: hsla(0, 0%, 95%, 0.75);
+}
+
+#mode-toggle ion-icon {
+  pointer-events: none;
+}
+
+body.light-mode #mode-toggle ion-icon {
+  color: #000000; /* 浅色模式下的图标颜色 */
+}
+body.dark-mode #mode-toggle ion-icon {
+  color: #ffffff; /* 深色模式下的图标颜色 */
+}
 
 .social-item {
   position: relative;

@@ -1,6 +1,26 @@
 'use strict';
 
 
+// script.js
+document.addEventListener('DOMContentLoaded', function() {
+  const toggleButton = document.getElementById('mode-toggle');
+  const body = document.body;
+
+  toggleButton.addEventListener('click', function() {
+      body.classList.toggle('dark-mode');
+      body.classList.toggle('light-mode');
+      
+      const icon = toggleButton.querySelector('ion-icon');
+      if (body.classList.contains('dark-mode')) {
+          icon.setAttribute('name', 'sunny-outline');
+      } else {
+          icon.setAttribute('name', 'moon-outline');
+      }
+  });
+
+  // 初始设置为 light-mode
+  body.classList.add('light-mode');
+});
 
 // element toggle function
 const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
@@ -177,3 +197,4 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
