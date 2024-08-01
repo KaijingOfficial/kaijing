@@ -111,16 +111,16 @@
   /* Light mode colors */
   --bg-gradient-onyx-light: linear-gradient(
     to bottom right, 
-    #f9f871 3%, 
+    #ffe99f 3%, 
     hsl(0, 0%, 90%) 97%
   );
   --bg-gradient-jet-light: linear-gradient(
     to bottom right, 
-    #ccfaee 10%, 
-    #f4fffc 90%
+    #ffffff 10%, 
+    #ffffff 90%
   ), #f2f2f2;
   --eerie-black-1-light: #e6e6e6;
-  --eerie-black-2-light: #DCF5F3;
+  --eerie-black-2-light: #ffffff;
   --sidebar-color-light: #f7fdff;
   --smoky-black-light: #dee1e0;
   --white-1-light: hsl(0, 0%, 36%);
@@ -236,7 +236,7 @@ body { background: var(--smoky-black); }
 }
 
 .light-mode .navbar {
-  background: #cce2e0;
+  background: #ffe99f;
 }
 
 #mode-toggle ion-icon {
@@ -423,7 +423,21 @@ article.active {
   background: var(--text-gradient-yellow);
   border-radius: 3px;
 }
+.pad-title {
+  position: relative;
+  padding-bottom: 7px;
+}
 
+.pad-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 3px;
+  background: var(--text-gradient-yellow);
+  border-radius: 3px;
+}
 .has-scrollbar::-webkit-scrollbar {
   width: 5px; /* for vertical scrollbar */
   height: 8px; /* for horizontal scrollbar */
@@ -720,7 +734,7 @@ main {
 \*-----------------------------------*/
 
 .about .article-title { margin-bottom: 15px; }
-
+.about .pad-title { margin-bottom: 15px; }
 .about-text {
   text-align: justify;
   text-justify: inter-word;
@@ -1175,7 +1189,7 @@ main {
 \*-----------------------------------*/
 
 .article-title { margin-bottom: 30px; }
-
+.pad-title { margin-bottom: 30px; }
 
 /**
  * education and experience 
@@ -1949,6 +1963,15 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 
   .article-title::after {
+    width: 40px;
+    height: 5px;
+  }
+  .pad-title {
+    font-weight: var(--fw-600);
+    padding-bottom: 15px;
+  }
+
+  .pad-title::after {
     width: 40px;
     height: 5px;
   }
