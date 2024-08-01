@@ -2,16 +2,6 @@
   #style.css
 \*-----------------------------------*/
 
-
-/**
- * Taken in 2022 from @codewithsadee
-   Modified by @serranopuente
- */
-
-
-
-
-
 /*-----------------------------------*\
   #CUSTOM PROPERTY
 \*-----------------------------------*/
@@ -36,8 +26,8 @@
   ), hsl(240, 2%, 13%);
   --bg-gradient-yellow-1: linear-gradient(
     to bottom right, 
-    hsl(45, 100%, 71%) 0%, s
-    hsla(36, 100%, 69%, 0) 50%
+    hsl(45, 88%, 52%) 0%, s
+    hsla(0, 0%, 97%, 0) 50%
   );
   --bg-gradient-yellow-2: linear-gradient(
     135deg, 
@@ -51,8 +41,8 @@
   );
   --text-gradient-yellow: linear-gradient(
     to right, 
-    hsl(45, 100%, 72%), 
-    hsl(35, 100%, 68%)
+    hsl(0, 100%, 72%), 
+    hsl(0, 100%, 50%)
   );
 
   /* solid */
@@ -65,7 +55,7 @@
   --white-1: hsl(0, 0%, 100%);
   --white-2: hsl(0, 0%, 98%);
   --orange-yellow-crayola: hsl(45, 100%, 72%);
-  --vegas-gold: hsl(45, 54%, 58%);
+  --vegas-gold: hsl(20, 54%, 58%);
   --light-gray: hsl(0, 0%, 84%);
   --light-gray-70: hsla(0, 0%, 84%, 0.7);
   --bittersweet-shimmer: hsl(0, 43%, 51%);
@@ -108,37 +98,37 @@
   --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.25);
   --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.25);
   --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.15);
-  --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.25);
+  --shadow-5: 0 24px 80px hsla(0, 0%, 100%, 0.25);
 
   /**
    * transition
    */
 
-  --transition-1: 0.25s ease;
-  --transition-2: 0.5s ease-in-out;
+  --transition-1: 0s ease;
+  --transition-2: 1.3s ease-in-out;
 
   /* Light mode colors */
   --bg-gradient-onyx-light: linear-gradient(
     to bottom right, 
-    hsl(0, 85%, 64%) 3%, 
+    #f9f871 3%, 
     hsl(0, 0%, 90%) 97%
   );
   --bg-gradient-jet-light: linear-gradient(
     to bottom right, 
-    hsla(181, 79%, 77%, 0.251) 0%, 
-    hsla(0, 100%, 65%, 0) 100%
-  ), hsl(0, 0%, 95%);
-  --eerie-black-1-light: hsl(0, 0%, 90%);
-  --eerie-black-2-light: hsl(213, 31%, 93%);
-  --smoky-black-light: hsl(0, 0%, 100%);
+    #ccfaee 10%, 
+    #f4fffc 90%
+  ), #f2f2f2;
+  --eerie-black-1-light: #e6e6e6;
+  --eerie-black-2-light: #DCF5F3;
+  --smoky-black-light: #dee1e0;
   --white-1-light: hsl(0, 0%, 36%);
   --white-2-light: hsl(0, 0%, 10%);
-  --orange-yellow-crayola-light: hsl(25, 100%, 50%);
-  --vegas-gold-light: hsl(0, 99%, 52%);
+  --orange-yellow-crayola-light: #ff1e00;
+  --vegas-gold-light: #fe0b0b;
   --light-gray-light: hsl(0, 69%, 3%);
   --light-gray-70-light: hsla(0, 0%, 11%, 0.7);
-  --light-gray-60-light: hsla(0, 11%, 80%, 0.6);
-  --bittersweet-shimmer-light: hsl(0, 43%, 51%);
+  --light-gray-60-light: hwb(0 78% 18% / 0.6);
+  --bittersweet-shimmer-light: #b84c4c;
   --jet-light: hsl(0, 0%, 80%);
 
   /* ... other variables ... */
@@ -149,12 +139,10 @@
   );
   --bg-gradient-yellow-2-light: linear-gradient(
     135deg, 
-    hsla(45, 100%, 71%, 0.251) 0%, 
-    hsla(35, 100%, 68%, 0) 59.86%
+    hsla(19, 100%, 71%, 0.251) 0%, 
+    /* hsla(0, 0%, 100%, 0) 59.86% */
   ), hsl(0, 0%, 95%);
 }
-
-
 
 
 .light-mode {
@@ -242,7 +230,7 @@ body { background: var(--smoky-black); }
 }
 
 .light-mode .navbar {
-  background: hsla(0, 0%, 95%, 0.75);
+  background: #cce2e0;
 }
 
 #mode-toggle ion-icon {
@@ -250,10 +238,10 @@ body { background: var(--smoky-black); }
 }
 
 body.light-mode #mode-toggle ion-icon {
-  color: #000000; /* 浅色模式下的图标颜色 */
+  color: #000000; 
 }
 body.dark-mode #mode-toggle ion-icon {
-  color: #ffffff; /* 深色模式下的图标颜色 */
+  color: #ffffff; 
 }
 
 .social-item {
@@ -749,6 +737,17 @@ main {
 .about-text p { margin-bottom: 15px; text-align: justify;  text-justify: inter-word;}
 
 
+.pad-title { padding-top: 40px; padding-bottom: 20px; }
+
+.news-text {
+  text-align: justify;
+  text-justify: inter-word;
+  color: var(--light-gray);
+  font-size: var(--fs-5);
+  font-weight: var(--fw-300);
+  line-height: 2;
+  
+}
 
 /**
  * #service 
@@ -2286,7 +2285,7 @@ textarea.form-input::-webkit-resizer { display: none; }
    * PORTFOLIO
    */
 
-  .article-title { padding-top: 40px; padding-bottom: 20px; }
+  .article-title { padding-top: 0px; padding-bottom: 20px; }
 
   .filter-select-box { display: none; }
 
