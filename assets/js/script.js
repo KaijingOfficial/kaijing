@@ -5,17 +5,26 @@
 document.addEventListener('DOMContentLoaded', function() {
   const toggleButton = document.getElementById('mode-toggle');
   const body = document.body;
+  const sidebar = document.querySelector('.sidebar');
+
+  function triggerFlicker() {
+    sidebar.classList.remove('flicker');
+    void sidebar.offsetWidth; // 触发回流
+    sidebar.classList.add('flicker');
+  }
 
   toggleButton.addEventListener('click', function() {
-      body.classList.toggle('dark-mode');
-      body.classList.toggle('light-mode');
-      
-      const icon = toggleButton.querySelector('ion-icon');
-      if (body.classList.contains('dark-mode')) {
-          icon.setAttribute('name', 'sunny-outline');
-      } else {
-          icon.setAttribute('name', 'moon-outline');
-      }
+    body.classList.toggle('dark-mode');
+    body.classList.toggle('light-mode');
+    
+    const icon = toggleButton.querySelector('ion-icon');
+    if (body.classList.contains('dark-mode')) {
+      icon.setAttribute('name', 'sunny-outline');
+    } else {
+      icon.setAttribute('name', 'moon-outline');
+    }
+
+    triggerFlicker();
   });
 
   // 初始设置为 light-mode
