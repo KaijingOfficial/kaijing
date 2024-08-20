@@ -1485,17 +1485,25 @@ main {
 .select-item button:hover { --eerie-black-2: hsl(240, 2%, 20%); }
 
 .project-list {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 30px;
+  display: block;
+  /* grid-template-columns: 1fr;
+  gap: 30px; */
   margin-bottom: 10px;
 }
 
-.project-item { display: none; }
+.project-item {
+  display: flex; /* 使用 flex 布局 */
+  align-items: center; /* 垂直居中对齐图标和文本 */
+  padding: 15px; /* 给项目增加内边距 */
+  margin-bottom: 30px; /* 项目之间的间距 */
+  /* background-color: var(--jet); */
+  border-radius: 16px; /* 可选：圆角 */
+  transition: var(--transition-1); /* 加入过渡效果 */
+}
 
 .project-item.active {
   display: block;
-  animation: scaleUp 0.25s ease forwards;
+  animation: scaleUp 0.75s ease forwards;
 }
 
 @keyframes scaleUp {
@@ -1507,11 +1515,12 @@ main {
 
 .project-img {
   position: relative;
-  width: 100%;
-  height: 200px;
+  width: 150px; /* 设置图标部分的固定宽度 */
+  height: 150px; /* 设置图标部分的固定高度 */
   border-radius: 16px;
   overflow: hidden;
-  margin-bottom: 15px;
+  margin-right: 20px; /* 图标和文字之间的间距 */
+  flex-shrink: 0; /* 防止图标缩放 */
 }
 
 .project-img::before {
